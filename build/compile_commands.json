@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/awl/projects/chat_2.0/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/main.cpp.o -c /home/awl/projects/chat_2.0/main.cpp",
+  "file": "/home/awl/projects/chat_2.0/main.cpp"
+},
+{
+  "directory": "/home/awl/projects/chat_2.0/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/chat.cpp.o -c /home/awl/projects/chat_2.0/chat.cpp",
+  "file": "/home/awl/projects/chat_2.0/chat.cpp"
+},
+{
+  "directory": "/home/awl/projects/chat_2.0/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/connector.cpp.o -c /home/awl/projects/chat_2.0/connector.cpp",
+  "file": "/home/awl/projects/chat_2.0/connector.cpp"
+},
+{
+  "directory": "/home/awl/projects/chat_2.0/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/database.cpp.o -c /home/awl/projects/chat_2.0/database.cpp",
+  "file": "/home/awl/projects/chat_2.0/database.cpp"
+}
+]

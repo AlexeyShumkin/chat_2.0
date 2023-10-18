@@ -47,7 +47,6 @@ void Chat::post()
 	std::string text;
 	std::string recipient = "all";
 	std::cout << "Message: ";
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::getline(std::cin, text);
 	std::vector<std::string> ds;
 	ds.resize(4);
@@ -68,10 +67,8 @@ void Chat::read()
 
 std::string Chat::getTime()
 {
-	time_t t = time(nullptr);
-	tm now;
-	localtime_s(&now, &t);
+	time_t now = time(nullptr);
 	char buffer[20];
-	strftime(buffer, sizeof(buffer), "%X %d/%m/%Y", &now);
+	strftime(buffer, sizeof(buffer), "%X %d/%m/%Y", localtime(&now));
 	return buffer;
 }
