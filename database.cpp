@@ -20,14 +20,33 @@ bool LocalDB::processRequest(const Dataset& ds)
 	else if (ds[0] == "READ")
 	{
 		for (auto& msg : msgData_)
-			std::cout << "to: " << msg[0] << '\n' << "from: " << msg[1] << '\n' << msg[2] << '\n' << msg[3] << std::endl;
+			std::cout << "from: " << msg[0] << '\n' << "to: " << msg[1] << '\n' << msg[2] << '\n' << msg[3] << std::endl;
+		return true;
+	}
+	else if(ds[0] == "DIALOG")
+	{
+		MsgNode* dialog = pvtMsgData_.getDialog(ds);
+		MsgNode* currentMsg = dialog;
+		while(currentMsg != nullptr)
+		{
+			std::cout << "from: " << currentMsg->ds_[0] << '\n' << "to: " << currentMsg->ds_[1] << '\n' << currentMsg->ds_[2] << '\n' << currentMsg->ds_[3] << std::endl;
+			currentMsg = currentMsg->next_;
+		}
 		return true;
 	}
 	else if (ds[2] == "")
 		return false;
 	else
 	{
-		msgData_.push_back(ds);
-		return true;
+		if(ds[1] != "all")
+		{
+			pvtMsgData_.addMsg(ds);
+			return true;
+		}
+		else
+		{
+			msgData_.push_back(ds);
+			return true;
+		}
 	}	
 }

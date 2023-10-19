@@ -45,24 +45,17 @@ void Chat::sign()
 void Chat::post()
 {
 	std::string text;
-	std::string recipient = "all";
+	std::string recipient = "notall";
 	std::cout << "Message: ";
 	std::getline(std::cin, text);
 	Dataset ds;
 	ds.resize(4);
-	ds[0] = recipient;
-	ds[1] = currentUser_;
+	ds[0] = currentUser_;
+	ds[1] = recipient;
 	ds[2] = text;
 	ds[3] = getTime();
 	if (!cn_->query(ds))
 		std::cout << "You can't send an empty message!\n";
-}
-
-void Chat::read()
-{
-	Dataset ds;
-	ds.push_back("READ");
-	cn_->query(ds);
 }
 
 std::string Chat::getTime()

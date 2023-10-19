@@ -1,10 +1,7 @@
 #pragma once
 #include<iostream>
-#include<string>
-#include<vector>
 #include<unordered_map>
-
-using Dataset = std::vector<std::string>;
+#include"hashtable.h"
 
 class DataBase
 {
@@ -20,4 +17,5 @@ public:
 private:
 	std::unordered_map<std::string, std::string> userData_;
 	std::vector<Dataset> msgData_;
+	HashTable pvtMsgData_;
 };

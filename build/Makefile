@@ -595,6 +595,30 @@ database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/database.cpp.s
 .PHONY : database.cpp.s
 
+hashtable.o: hashtable.cpp.o
+.PHONY : hashtable.o
+
+# target to build an object file
+hashtable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hashtable.cpp.o
+.PHONY : hashtable.cpp.o
+
+hashtable.i: hashtable.cpp.i
+.PHONY : hashtable.i
+
+# target to preprocess a source file
+hashtable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hashtable.cpp.i
+.PHONY : hashtable.cpp.i
+
+hashtable.s: hashtable.cpp.s
+.PHONY : hashtable.s
+
+# target to generate assembly for a file
+hashtable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hashtable.cpp.s
+.PHONY : hashtable.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -668,6 +692,9 @@ help:
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
+	@echo "... hashtable.o"
+	@echo "... hashtable.i"
+	@echo "... hashtable.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
