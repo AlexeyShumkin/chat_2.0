@@ -4,8 +4,8 @@
 class Connector
 {
 public:
-	Connector(LocalDB* db) : db_{ db } {}
-	bool query(const std::vector<std::string>& dataset);
+	Connector(DataBase* db) : db_{ db } {}
+	bool query(const Dataset& ds);
 	
 private:
 	DataBase* db_{ nullptr };

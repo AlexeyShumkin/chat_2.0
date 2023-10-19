@@ -8,7 +8,7 @@ void Chat::reg()
 	std::cin >> login;
 	std::cout << "Enter your password: ";
 	std::cin >> password;
-	std::vector<std::string> ds;
+	Dataset ds;
 	ds.resize(4);
 	ds[0] = "REG";
 	ds[1] = login;
@@ -28,7 +28,7 @@ void Chat::sign()
 	std::cin >> login;
 	std::cout << "Enter your password: ";
 	std::cin >> password;
-	std::vector<std::string> ds;
+	Dataset ds;
 	ds.resize(4);
 	ds[0] = "SIGN";
 	ds[1] = login;
@@ -48,7 +48,7 @@ void Chat::post()
 	std::string recipient = "all";
 	std::cout << "Message: ";
 	std::getline(std::cin, text);
-	std::vector<std::string> ds;
+	Dataset ds;
 	ds.resize(4);
 	ds[0] = recipient;
 	ds[1] = currentUser_;
@@ -60,7 +60,7 @@ void Chat::post()
 
 void Chat::read()
 {
-	std::vector<std::string> ds;
+	Dataset ds;
 	ds.push_back("READ");
 	cn_->query(ds);
 }

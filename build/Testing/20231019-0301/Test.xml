@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Site BuildName="Linux-g++"
-	BuildStamp="20231018-1026-Experimental"
+	BuildStamp="20231019-0301-Experimental"
 	Name="awlN751JX"
 	Generator="ctest-3.22.1"
 	CompilerName="/usr/bin/g++"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="2047"
 	TotalPhysicalMemory="7819"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="3403.66"
+	ProcessorClockFrequency="3369.05"
 	>
 	<Testing>
-		<StartDateTime>Oct 18 22:03 +07</StartDateTime>
-		<StartTestTime>1697641434</StartTestTime>
+		<StartDateTime>Oct 19 10:01 +07</StartDateTime>
+		<StartTestTime>1697684495</StartTestTime>
 		<TestList/>
-		<EndDateTime>Oct 18 22:03 +07</EndDateTime>
-		<EndTestTime>1697641434</EndTestTime>
+		<EndDateTime>Oct 19 10:01 +07</EndDateTime>
+		<EndTestTime>1697684495</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

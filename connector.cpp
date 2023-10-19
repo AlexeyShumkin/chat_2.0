@@ -1,6 +1,6 @@
 #include "connector.h"
 
-bool Connector::query(const std::vector<std::string>& dataset)
+bool Connector::query(const Dataset& ds)
 {
-	return db_->processRequest(dataset);
+	return db_->processRequest(ds);
 }

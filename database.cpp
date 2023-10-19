@@ -1,33 +1,33 @@
 #include "database.h"
 
-bool LocalDB::processRequest(const std::vector<std::string>& dataset)
+bool LocalDB::processRequest(const Dataset& ds)
 {
-	if (dataset[0] == "REG")
+	if (ds[0] == "REG")
 	{
-		auto it = userData_.find(dataset[1]);
+		auto it = userData_.find(ds[1]);
 		if (it != userData_.end())
 			return false;
-		userData_.emplace(dataset[1], dataset[2]);
+		userData_.emplace(ds[1], ds[2]);
 		return true;
 	}
-	else if (dataset[0] == "SIGN")
+	else if (ds[0] == "SIGN")
 	{
-		auto it = userData_.find(dataset[1]);
-		if (it != userData_.end() && it->second == dataset[2])
+		auto it = userData_.find(ds[1]);
+		if (it != userData_.end() && it->second == ds[2])
 			return true;
 		return false;
 	}
-	else if (dataset[0] == "READ")
+	else if (ds[0] == "READ")
 	{
 		for (auto& msg : msgData_)
-			std::cout << msg[0] << ' ' << msg[1] << ' ' << msg[2] << ' ' << msg[3] << std::endl;
+			std::cout << "to: " << msg[0] << '\n' << "from: " << msg[1] << '\n' << msg[2] << '\n' << msg[3] << std::endl;
 		return true;
 	}
-	else if (dataset[2] == "")
+	else if (ds[2] == "")
 		return false;
 	else
 	{
-		msgData_.push_back(dataset);
+		msgData_.push_back(ds);
 		return true;
 	}	
 }

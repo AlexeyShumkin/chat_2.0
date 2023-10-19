@@ -6,5 +6,6 @@ int main()
     Connector cn(&db);
     Chat chat(&cn);
     chat.post();
+    chat.post();
     chat.read();
 }
