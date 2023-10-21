@@ -13,4 +13,5 @@ public:
 protected:
 	Connector* cn_{ nullptr };
 	std::string currentUser_;
+	std::string recipient_ = "all";
 };

@@ -9,10 +9,9 @@ void Chat::reg()
 	std::cout << "Enter your password: ";
 	std::cin >> password;
 	Dataset ds;
-	ds.resize(4);
-	ds[0] = "REG";
-	ds[1] = login;
-	ds[2] = password;
+	ds.resize(2);
+	ds[0] = login;
+	ds[1] = password;
 	if (cn_->query(ds))
 		std::cout << "Registration was successful!\n";
 	else
@@ -29,10 +28,9 @@ void Chat::sign()
 	std::cout << "Enter your password: ";
 	std::cin >> password;
 	Dataset ds;
-	ds.resize(4);
-	ds[0] = "SIGN";
-	ds[1] = login;
-	ds[2] = password;
+	ds.resize(3);
+	ds[0] = login;
+	ds[1] = password;
 	if (cn_->query(ds))
 	{
 		currentUser_ = login;
@@ -45,13 +43,12 @@ void Chat::sign()
 void Chat::post()
 {
 	std::string text;
-	std::string recipient = "notall";
 	std::cout << "Message: ";
-	std::getline(std::cin, text);
+	std::cin >> text;
 	Dataset ds;
 	ds.resize(4);
 	ds[0] = currentUser_;
-	ds[1] = recipient;
+	ds[1] = recipient_;
 	ds[2] = text;
 	ds[3] = getTime();
 	if (!cn_->query(ds))
