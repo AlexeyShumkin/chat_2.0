@@ -1,17 +1,17 @@
 #pragma once
-#include"connector.h"
+#include <iostream>
+#include "connector.h"
 
 class Chat
 {
 public:
 	Chat(Connector* cn) : cn_{ cn } {}
-	void reg();
-	void sign();
-	void post();
-	void read();
+	virtual void reg() final;
+	virtual void sign() final;
+	virtual void post(const std::string& str1, const std::string& str2);
 	std::string getTime();
 protected:
 	Connector* cn_{ nullptr };
 	std::string currentUser_;
-	std::string recipient_ = "all";
+	std::string recipient_;
 };

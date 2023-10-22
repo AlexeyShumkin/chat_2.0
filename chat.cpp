@@ -29,8 +29,9 @@ void Chat::sign()
 	std::cin >> password;
 	Dataset ds;
 	ds.resize(3);
-	ds[0] = login;
-	ds[1] = password;
+	ds[0] = "SIGN";
+	ds[1] = login;
+	ds[2] = password;
 	if (cn_->query(ds))
 	{
 		currentUser_ = login;
@@ -40,15 +41,15 @@ void Chat::sign()
 		std::cout << "Invalid login or password!\n";
 }
 
-void Chat::post()
+void Chat::post(const std::string& str1, const std::string& str2)
 {
 	std::string text;
 	std::cout << "Message: ";
 	std::cin >> text;
 	Dataset ds;
 	ds.resize(4);
-	ds[0] = currentUser_;
-	ds[1] = recipient_;
+	ds[0] = str1;
+	ds[1] = str2;
 	ds[2] = text;
 	ds[3] = getTime();
 	if (!cn_->query(ds))

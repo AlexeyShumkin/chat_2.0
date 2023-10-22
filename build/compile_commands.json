@@ -21,7 +21,7 @@
 },
 {
   "directory": "/home/awl/projects/chat_2.0/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/hash.cpp.o -c /home/awl/projects/chat_2.0/hash.cpp",
-  "file": "/home/awl/projects/chat_2.0/hash.cpp"
+  "command": "/usr/bin/g++   -g -o CMakeFiles/chat_2.0.dir/indexmap.cpp.o -c /home/awl/projects/chat_2.0/indexmap.cpp",
+  "file": "/home/awl/projects/chat_2.0/indexmap.cpp"
 }
 ]

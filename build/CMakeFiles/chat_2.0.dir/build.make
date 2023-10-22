@@ -125,19 +125,19 @@ CMakeFiles/chat_2.0.dir/database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chat_2.0.dir/database.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/awl/projects/chat_2.0/database.cpp -o CMakeFiles/chat_2.0.dir/database.cpp.s
 
-CMakeFiles/chat_2.0.dir/hash.cpp.o: CMakeFiles/chat_2.0.dir/flags.make
-CMakeFiles/chat_2.0.dir/hash.cpp.o: ../hash.cpp
-CMakeFiles/chat_2.0.dir/hash.cpp.o: CMakeFiles/chat_2.0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/awl/projects/chat_2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chat_2.0.dir/hash.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_2.0.dir/hash.cpp.o -MF CMakeFiles/chat_2.0.dir/hash.cpp.o.d -o CMakeFiles/chat_2.0.dir/hash.cpp.o -c /home/awl/projects/chat_2.0/hash.cpp
+CMakeFiles/chat_2.0.dir/indexmap.cpp.o: CMakeFiles/chat_2.0.dir/flags.make
+CMakeFiles/chat_2.0.dir/indexmap.cpp.o: ../indexmap.cpp
+CMakeFiles/chat_2.0.dir/indexmap.cpp.o: CMakeFiles/chat_2.0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/awl/projects/chat_2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chat_2.0.dir/indexmap.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_2.0.dir/indexmap.cpp.o -MF CMakeFiles/chat_2.0.dir/indexmap.cpp.o.d -o CMakeFiles/chat_2.0.dir/indexmap.cpp.o -c /home/awl/projects/chat_2.0/indexmap.cpp
 
-CMakeFiles/chat_2.0.dir/hash.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chat_2.0.dir/hash.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/awl/projects/chat_2.0/hash.cpp > CMakeFiles/chat_2.0.dir/hash.cpp.i
+CMakeFiles/chat_2.0.dir/indexmap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chat_2.0.dir/indexmap.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/awl/projects/chat_2.0/indexmap.cpp > CMakeFiles/chat_2.0.dir/indexmap.cpp.i
 
-CMakeFiles/chat_2.0.dir/hash.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chat_2.0.dir/hash.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/awl/projects/chat_2.0/hash.cpp -o CMakeFiles/chat_2.0.dir/hash.cpp.s
+CMakeFiles/chat_2.0.dir/indexmap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chat_2.0.dir/indexmap.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/awl/projects/chat_2.0/indexmap.cpp -o CMakeFiles/chat_2.0.dir/indexmap.cpp.s
 
 # Object files for target chat_2.0
 chat_2_0_OBJECTS = \
@@ -145,7 +145,7 @@ chat_2_0_OBJECTS = \
 "CMakeFiles/chat_2.0.dir/chat.cpp.o" \
 "CMakeFiles/chat_2.0.dir/connector.cpp.o" \
 "CMakeFiles/chat_2.0.dir/database.cpp.o" \
-"CMakeFiles/chat_2.0.dir/hash.cpp.o"
+"CMakeFiles/chat_2.0.dir/indexmap.cpp.o"
 
 # External object files for target chat_2.0
 chat_2_0_EXTERNAL_OBJECTS =
@@ -154,7 +154,7 @@ chat_2.0: CMakeFiles/chat_2.0.dir/main.cpp.o
 chat_2.0: CMakeFiles/chat_2.0.dir/chat.cpp.o
 chat_2.0: CMakeFiles/chat_2.0.dir/connector.cpp.o
 chat_2.0: CMakeFiles/chat_2.0.dir/database.cpp.o
-chat_2.0: CMakeFiles/chat_2.0.dir/hash.cpp.o
+chat_2.0: CMakeFiles/chat_2.0.dir/indexmap.cpp.o
 chat_2.0: CMakeFiles/chat_2.0.dir/build.make
 chat_2.0: CMakeFiles/chat_2.0.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/awl/projects/chat_2.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable chat_2.0"

@@ -595,29 +595,29 @@ database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/database.cpp.s
 .PHONY : database.cpp.s
 
-hash.o: hash.cpp.o
-.PHONY : hash.o
+indexmap.o: indexmap.cpp.o
+.PHONY : indexmap.o
 
 # target to build an object file
-hash.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hash.cpp.o
-.PHONY : hash.cpp.o
+indexmap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.o
+.PHONY : indexmap.cpp.o
 
-hash.i: hash.cpp.i
-.PHONY : hash.i
+indexmap.i: indexmap.cpp.i
+.PHONY : indexmap.i
 
 # target to preprocess a source file
-hash.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hash.cpp.i
-.PHONY : hash.cpp.i
+indexmap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.i
+.PHONY : indexmap.cpp.i
 
-hash.s: hash.cpp.s
-.PHONY : hash.s
+indexmap.s: indexmap.cpp.s
+.PHONY : indexmap.s
 
 # target to generate assembly for a file
-hash.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/hash.cpp.s
-.PHONY : hash.cpp.s
+indexmap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.s
+.PHONY : indexmap.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -692,9 +692,9 @@ help:
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
-	@echo "... hash.o"
-	@echo "... hash.i"
-	@echo "... hash.s"
+	@echo "... indexmap.o"
+	@echo "... indexmap.i"
+	@echo "... indexmap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

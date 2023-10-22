@@ -1,7 +1,10 @@
 #pragma once
-#include<iostream>
-#include<unordered_map>
-#include"hash.h"
+#include <vector>
+#include <list>
+#include "indexmap.h"
+
+using Dataset = std::vector<std::string>;
+using Dialog = std::list<Dataset>;
 
 class DataBase
 {
@@ -13,8 +16,10 @@ public:
 class LocalDB : public DataBase
 {
 public:
+	LocalDB(IndexMap* imap);
 	bool processRequest(const Dataset& ds) override;
 private:
 	std::unordered_map<std::string, std::string> userData_;
-	HashTable msgData_;
+	std::vector<Dialog> msgData_;
+	IndexMap* indexData_;
 };
