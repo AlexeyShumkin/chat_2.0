@@ -1,6 +1,8 @@
 #include "connector.h"
 
-bool Connector::query(const Dataset& ds)
+Connector::Connector(DataBase *db) : db_{ db } {}
+
+bool Connector::query(const Dataset &ds)
 {
-	return db_->processRequest(ds);
+	return db_->handle(ds);
 }

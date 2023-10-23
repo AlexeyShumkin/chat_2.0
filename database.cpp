@@ -5,7 +5,7 @@ LocalDB::LocalDB(IndexMap *imap) : indexData_{ imap }
 	msgData_.resize(1);
 }
 
-bool LocalDB::processRequest(const Dataset &ds)
+bool LocalDB::handle(const Dataset &ds)
 {
 	if (ds.size() == 2)
 	{
@@ -34,7 +34,7 @@ bool LocalDB::processRequest(const Dataset &ds)
 		}
 		else
 		{
-			int dialogID = indexData_->makeDialogID(ds[0], ds[1]);
+			size_t dialogID = indexData_->getID(ds[0], ds[1]);
 			int index = indexData_->search(dialogID);
 			if(index <= 0)
 			{

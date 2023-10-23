@@ -5,7 +5,7 @@
 class Chat
 {
 public:
-	Chat(Connector* cn) : cn_{ cn } {}
+	Chat(Connector* cn);
 	virtual void reg() final;
 	virtual void sign() final;
 	virtual void post(const std::string& str1, const std::string& str2);

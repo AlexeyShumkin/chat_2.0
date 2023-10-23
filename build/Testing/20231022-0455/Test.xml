@@ -7,8 +7,8 @@
 	CompilerVersion="11.4.0"
 	OSName="Linux"
 	Hostname="awlN751JX"
-	OSRelease="6.2.0-34-generic"
-	OSVersion="#34~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  7 13:12:03 UTC 2"
+	OSRelease="6.2.0-35-generic"
+	OSVersion="#35~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct  6 10:23:26 UTC 2"
 	OSPlatform="x86_64"
 	Is64Bits="1"
 	VendorString="GenuineIntel"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="2047"
 	TotalPhysicalMemory="7819"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="2680.96"
+	ProcessorClockFrequency="2693.75"
 	>
 	<Testing>
-		<StartDateTime>Oct 22 19:12 +07</StartDateTime>
-		<StartTestTime>1697976757</StartTestTime>
+		<StartDateTime>Oct 22 21:13 +07</StartDateTime>
+		<StartTestTime>1697984026</StartTestTime>
 		<TestList/>
-		<EndDateTime>Oct 22 19:12 +07</EndDateTime>
-		<EndTestTime>1697976757</EndTestTime>
+		<EndDateTime>Oct 22 21:13 +07</EndDateTime>
+		<EndTestTime>1697984026</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

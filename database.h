@@ -10,14 +10,14 @@ class DataBase
 {
 public:
 	virtual ~DataBase() = default;
-	virtual bool processRequest(const Dataset& ds) = 0;
+	virtual bool handle(const Dataset& ds) = 0;
 };
 
 class LocalDB : public DataBase
 {
 public:
 	LocalDB(IndexMap* imap);
-	bool processRequest(const Dataset& ds) override;
+	bool handle(const Dataset& ds) override;
 private:
 	std::unordered_map<std::string, std::string> userData_;
 	std::vector<Dialog> msgData_;

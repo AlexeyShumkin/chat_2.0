@@ -1,5 +1,7 @@
 #include "chat.h"
 
+Chat::Chat(Connector *cn) : cn_{ cn } {}
+
 void Chat::reg()
 {
 	std::string login;

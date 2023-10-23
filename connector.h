@@ -4,7 +4,7 @@
 class Connector
 {
 public:
-	Connector(DataBase* db) : db_{ db } {}
+	Connector(DataBase* db);
 	bool query(const Dataset& ds);
 	
 private:

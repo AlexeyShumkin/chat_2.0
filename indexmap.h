@@ -5,11 +5,12 @@
 class IndexMap
 {
 public:
-    int makeDialogID(const std::string& str1, const std::string& str2);
-    void add(int uniqueNum);
-    int search(int uniqueNum);
+    size_t getID(const std::string& str1, const std::string& str2);
+    void add(size_t DialogID);
+    int search(size_t DialogID);
     int getIndex() const;
 private:
-    std::unordered_map<int, int> iMap_;
+    size_t makeID(const std::string& str1, const std::string& str2);
+    std::unordered_map<size_t, int> iMap_;
     int index_{ 1 };
 };
