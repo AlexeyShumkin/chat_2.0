@@ -58,3 +58,39 @@ bool LocalDB::handle(const Dataset &ds)
 	else
 		return false;
 }
+
+void LocalDB::zip(const std::string& path)
+{
+	std::fstream out;
+    out.open(path, std::fstream::app | std::fstream::out);
+    if(out.is_open())
+    {
+        out << userData_.size();
+        for(const auto& u : userData_)
+            out << ' ' << u.first << ' ' << u.second;
+        out.close();
+    }
+	else
+		std::cout << "Failed to open file!\n";
+}
+
+void LocalDB::unzip(const std::string& path)
+{
+
+	std::fstream in;
+	in.open(path, std::fstream::in);
+	if(in.is_open())
+	{
+		size_t size = 0;
+		in >> size;
+		for(size_t i = 0; i < size; ++i)
+		{
+			std::string key;
+			std::string val;
+			in >> key >> val;
+			userData_.emplace(key, val);
+		}
+	}
+	else
+		std::cout << "Failed to open file!\n";
+}

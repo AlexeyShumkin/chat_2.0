@@ -5,5 +5,7 @@ int main()
     IndexMap im;
     LocalDB db(&im);
     Chat pub(&db);
-    pub.run();
+    
+    
+    
 }

@@ -5,10 +5,7 @@ CMakeFiles/chat_2.0.dir/chat.cpp.o: ../chat.cpp \
   /usr/include/stdc-predef.h \
   ../chat.h \
   ../database.h \
-  /usr/include/c++/11/fstream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -21,6 +18,9 @@ CMakeFiles/chat_2.0.dir/chat.cpp.o: ../chat.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -180,14 +180,14 @@ CMakeFiles/chat_2.0.dir/chat.cpp.o: ../chat.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
-  /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/fstream \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/iostream \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -216,10 +216,7 @@ CMakeFiles/chat_2.0.dir/chat.cpp.o: ../chat.cpp \
 CMakeFiles/chat_2.0.dir/database.cpp.o: ../database.cpp \
   /usr/include/stdc-predef.h \
   ../database.h \
-  /usr/include/c++/11/fstream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -232,6 +229,9 @@ CMakeFiles/chat_2.0.dir/database.cpp.o: ../database.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -391,14 +391,14 @@ CMakeFiles/chat_2.0.dir/database.cpp.o: ../database.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
-  /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/fstream \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/iostream \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -595,10 +595,7 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
   ../chat.h \
   ../database.h \
-  /usr/include/c++/11/fstream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -611,6 +608,9 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -770,14 +770,14 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
-  /usr/include/c++/11/ostream \
   /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/fstream \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/iostream \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -836,7 +836,7 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/istream.tcc:
 
-/usr/include/c++/11/ostream:
+/usr/include/c++/11/istream:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
@@ -938,8 +938,6 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/typeinfo:
 
-/usr/include/c++/11/istream:
-
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/11/bits/exception_defines.h:
@@ -984,6 +982,18 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/11/ostream:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -1022,25 +1032,23 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/include/c++/11/bits/ostream_insert.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/c++/11/ios:
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 ../chat.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+../chat.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/11/bits/node_handle.h:
 
@@ -1052,19 +1060,11 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/stdc-predef.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-../chat.cpp:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
+/usr/include/c++/11/ios:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
@@ -1214,9 +1214,9 @@ CMakeFiles/chat_2.0.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/locale_classes.h:
 
-/usr/include/c++/11/iostream:
-
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/c++/11/iostream:
 
 /usr/include/c++/11/backward/binders.h:
 

@@ -1,6 +1,6 @@
 #pragma once
-#include <fstream>
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <list>
 #include "indexmap.h"
@@ -22,6 +22,8 @@ class LocalDB : public DataBase
 public:
 	LocalDB(IndexMap* imap);
 	bool handle(const Dataset& ds) override;
+	void zip(const std::string& path);
+	void unzip(const std::string& path);
 private:
 	Users userData_;
 	Chats msgData_;
