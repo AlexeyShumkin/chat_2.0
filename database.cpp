@@ -9,6 +9,8 @@ bool LocalDB::handle(const Dataset &ds)
 {
 	if (ds.size() == 2)
 	{
+		if(ds[0] == "all")
+			return false;
 		auto it = userData_.find(ds[0]);
 		if (it != userData_.end())
 			return false;
