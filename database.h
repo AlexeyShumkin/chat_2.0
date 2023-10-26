@@ -2,13 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <list>
-#include "indexmap.h"
+#include <string>
+#include <filesystem>
 
-using Users = std::unordered_map<std::string, std::string>;
 using Dataset = std::vector<std::string>;
-using Dialog = std::list<Dataset>;
-using Chats = std::vector<Dialog>;
+using namespace std::string_literals;
+namespace fs = std::filesystem;
 
 class DataBase
 {
@@ -20,12 +19,11 @@ public:
 class LocalDB : public DataBase
 {
 public:
-	LocalDB(IndexMap* imap);
+	LocalDB();
 	bool handle(const Dataset& ds) override;
-	void zip(const std::string& path);
-	void unzip(const std::string& path);
 private:
-	Users userData_;
-	Chats msgData_;
-	IndexMap* indexData_;
+	fs::path userDataPath_{ "userData"s };
+	fs::path msgDataPath_{ "msgData"s };
+	std::fstream fst_;
+	size_t makeDialogID(const std::string& sender, const std::string& recipient);
 };

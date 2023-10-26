@@ -571,30 +571,6 @@ database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/database.cpp.s
 .PHONY : database.cpp.s
 
-indexmap.o: indexmap.cpp.o
-.PHONY : indexmap.o
-
-# target to build an object file
-indexmap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.o
-.PHONY : indexmap.cpp.o
-
-indexmap.i: indexmap.cpp.i
-.PHONY : indexmap.i
-
-# target to preprocess a source file
-indexmap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.i
-.PHONY : indexmap.cpp.i
-
-indexmap.s: indexmap.cpp.s
-.PHONY : indexmap.s
-
-# target to generate assembly for a file
-indexmap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_2.0.dir/build.make CMakeFiles/chat_2.0.dir/indexmap.cpp.s
-.PHONY : indexmap.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -665,9 +641,6 @@ help:
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
-	@echo "... indexmap.o"
-	@echo "... indexmap.i"
-	@echo "... indexmap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

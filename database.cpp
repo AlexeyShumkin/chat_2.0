@@ -1,96 +1,47 @@
 #include "database.h"
 
-LocalDB::LocalDB(IndexMap *imap) : indexData_{ imap } 
+LocalDB::LocalDB()
 {
-	msgData_.resize(1);
+	fs::create_directory(userDataPath_);
+	fs::create_directory(msgDataPath_);
 }
 
-bool LocalDB::handle(const Dataset &ds)
+bool LocalDB::handle(const Dataset& ds)
 {
-	if (ds.size() == 2)
-	{
-		if(ds[0] == "all")
-			return false;
-		auto it = userData_.find(ds[0]);
-		if (it != userData_.end())
-			return false;
-		userData_.emplace(ds[0], ds[1]);
-		return true;
-	}
-	else if (ds[0] == "SIGN")
-	{
-		auto it = userData_.find(ds[1]);
-		if (it != userData_.end() && it->second == ds[2])
-			return true;
-		return false;
-	}
-	
-	else if(ds.size() == 4)
-	{
-		if(ds[2] == "")
-			return false;
-		if(ds[1] == "all")
-		{
-			msgData_[0].push_back(ds);
-			return true;
-		}
-		else
-		{
-			size_t dialogID = indexData_->getID(ds[0], ds[1]);
-			int index = indexData_->search(dialogID);
-			if(index <= 0)
-			{
-				index = indexData_->getIndex();
-				if(index >= msgData_.size())
-					msgData_.resize(index + 1);
-				msgData_[index].push_back(ds);
-				indexData_->add(dialogID);
-			}
-			else
-			{
-				if(index >= msgData_.size())
-					msgData_.resize(index + 1);
-				msgData_[index].push_back(ds);
-			}
-			return true;
-		}
-	}
-	else
-		return false;
-}
-
-void LocalDB::zip(const std::string& path)
-{
-	std::fstream out;
-    out.open(path, std::fstream::app | std::fstream::out);
-    if(out.is_open())
+    if(ds[0] == "REG"s && !fs::exists(userDataPath_ / ds[1]))
     {
-        out << userData_.size();
-        for(const auto& u : userData_)
-            out << ' ' << u.first << ' ' << u.second;
-        out.close();
+        fst_.open(userDataPath_ / ds[1], std::fstream::out);
+        if(fst_.is_open())
+        {
+            fst_ << ds[2];
+            fst_.close();
+            return true;
+        }
     }
-	else
-		std::cout << "Failed to open file!\n";
+    else if(ds[0] == "SIGN"s && fs::exists(userDataPath_ / ds[1]))
+    {
+        std::string tmp;
+        fst_.open(userDataPath_ / ds[1], std::fstream::in);
+        if(fst_.is_open())
+        {
+            fst_ >> tmp;
+            fst_.close();
+        }
+        if(ds[2] == tmp)
+            return true;
+    }
+    return false;
 }
 
-void LocalDB::unzip(const std::string& path)
+size_t LocalDB::makeDialogID(const std::string& sender, const std::string& recipient)
 {
-
-	std::fstream in;
-	in.open(path, std::fstream::in);
-	if(in.is_open())
-	{
-		size_t size = 0;
-		in >> size;
-		for(size_t i = 0; i < size; ++i)
-		{
-			std::string key;
-			std::string val;
-			in >> key >> val;
-			userData_.emplace(key, val);
-		}
-	}
-	else
-		std::cout << "Failed to open file!\n";
+    size_t i = 0;
+    size_t res = 0;
+    size_t sum = sender.size() + recipient.size();
+    while(i < sender.size() && i < recipient.size())
+    {
+        res += sender[i] + recipient[i];
+        ++i;
+    }
+    return res <<= sum;
 }

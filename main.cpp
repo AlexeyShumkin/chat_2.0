@@ -2,10 +2,10 @@
 
 int main()
 {
-    IndexMap im;
-    LocalDB db(&im);
-    Chat pub(&db);
-    
-    
-    
+    LocalDB db;
+    Dataset ds;
+    PubChat pub(&db);
+    pub.reg();
+    pub.sign();
+
 }

@@ -1,1 +1,1 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/chat_2.0.dir/main.cpp.o CMakeFiles/chat_2.0.dir/chat.cpp.o CMakeFiles/chat_2.0.dir/database.cpp.o CMakeFiles/chat_2.0.dir/indexmap.cpp.o -o chat_2.0 
+/usr/bin/g++ -g -rdynamic CMakeFiles/chat_2.0.dir/main.cpp.o CMakeFiles/chat_2.0.dir/chat.cpp.o CMakeFiles/chat_2.0.dir/database.cpp.o -o chat_2.0 
