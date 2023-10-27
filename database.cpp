@@ -2,6 +2,7 @@
 
 LocalDB::LocalDB()
 {
+    fs::create_directory("data"s);
 	fs::create_directory(userDataPath_);
 	fs::create_directory(msgDataPath_);
 }

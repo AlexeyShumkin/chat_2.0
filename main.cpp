@@ -4,6 +4,5 @@ int main()
 {
     LocalDB db;
     Chat pub(&db);
-    pub.reg();
-    pub.showUsers();
+    pub.run();
 }

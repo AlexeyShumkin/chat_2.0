@@ -46,7 +46,7 @@ void Chat::run()
 			std::cout << "Your command is unclear. Please, select an action from the list:\n";
 		if(currentUser_.size())
 		{
-			// showUsers();
+			showUsers();
 			showMenu();
 		}
 	} while(true);
@@ -77,7 +77,7 @@ void Chat::showMenu()
 			Dataset ds{ "FIND"s, recipient };
 			if(!db_->handle(ds))
 			{
-				std::cout << "User with this login is not in the chat room!\n";
+				std::cout << "There is no user with this login in the chat room!\n";
 				continue;
 			}
 			Dialog pvt(db_, currentUser_, recipient);
@@ -100,8 +100,19 @@ void Chat::showUsers()
 {
 	Dataset ds{ "USERS"s };
 	ds = db_->reply(ds);
+	fs::path path;
+	int number = 1;
+	std::cout << "Now in chat room:\n";
     for (const auto& entry : fs::directory_iterator(ds[0]))
-        std::cout << entry.path() << std::endl;
+    {
+		path = entry;
+		auto user = path.generic_string();
+		user = user.substr(14);
+		if(user == currentUser_)
+			std::cout << number++ << ") " << user << " | online\n";
+		else
+			std::cout << number++ << ") " << user << " | offline\n";
+	}
 }
 
 void Chat::reg()
@@ -141,7 +152,7 @@ void Chat::post()
 {
 	std::string text;
 	std::cout << "Message: ";
-	std::cin >> text;
+	std::getline(std::cin.ignore(), text);
 	if(text == ""s)
 		std::cout << "You can't send an empty message!\n";
 	else

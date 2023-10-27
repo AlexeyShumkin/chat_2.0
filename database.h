@@ -24,8 +24,8 @@ public:
 	bool handle(const Dataset& ds) override;
 	const Dataset& reply(Dataset& ds) override;
 private:
-	fs::path userDataPath_{ "userData"s };
-	fs::path msgDataPath_{ "msgData"s };
+	fs::path userDataPath_{ "data/userData"s };
+	fs::path msgDataPath_{ "data/msgData"s };
 	std::fstream fst_;
 	size_t makeDialogID(const std::string& sender, const std::string& recipient);
 	size_t hashFunction(const std::string& password);
