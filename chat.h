@@ -1,17 +1,19 @@
 #pragma once
 #include "database.h"
 
-class PubChat
+class Chat
 {
 public:
-	PubChat() = default;
-	PubChat(DataBase* db);
-	virtual ~PubChat() = default;
+	Chat() = default;
+	Chat(DataBase* db);
+	virtual ~Chat() = default;
 	virtual void run() final;
 	virtual void reg() final;
 	virtual void sign() final;
 	virtual void showMenu();
+	void showUsers();
 	void post();
+	void read(const fs::path& path);
 	std::string getTime();
 protected:
 	DataBase* db_{ nullptr };
@@ -19,9 +21,9 @@ protected:
 	std::string recipient_ = "all"s;
 };
 
-class PvtChat : public PubChat
+class Dialog : public Chat
 {
 public:
-	PvtChat(DataBase* db, const std::string& currentUser, const std::string& recipient);
+	Dialog(DataBase* db, const std::string& currentUser, const std::string& recipient);
 	void showMenu() override;
 };

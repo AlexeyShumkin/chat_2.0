@@ -3,9 +3,6 @@
 int main()
 {
     LocalDB db;
-    Dataset ds;
-    PubChat pub(&db);
-    pub.reg();
-    pub.sign();
-
+    Chat pub(&db);
+    pub.run();
 }

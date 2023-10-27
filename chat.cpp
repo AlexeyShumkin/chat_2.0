@@ -1,8 +1,8 @@
 #include "chat.h"
 
-PubChat::PubChat(DataBase* db) : db_{ db } {}
+Chat::Chat(DataBase* db) : db_{ db } {}
 
-void PubChat::run()
+void Chat::run()
 {
 	std::cout << "Hello! You are welcome to register, or you can enter the chat room if you are already registered.\n";
 	char action = '0';
@@ -45,12 +45,15 @@ void PubChat::run()
 		else
 			std::cout << "Your command is unclear. Please, select an action from the list:\n";
 		if(currentUser_.size())
+		{
+			// showUsers();
 			showMenu();
+		}
 	} while(true);
 	std::cout << "Goodbye!\n";
 }
 
-void PubChat::showMenu()
+void Chat::showMenu()
 {
 	char action = '0';
 	do
@@ -71,25 +74,37 @@ void PubChat::showMenu()
 				std::cout << "The developer still believes that users should not send messages to themselves :)\n";
 				continue;
 			}
-			Dataset ds{ "FIND", recipient };
+			Dataset ds{ "FIND"s, recipient };
 			if(!db_->handle(ds))
 			{
 				std::cout << "User with this login is not in the chat room!\n";
 				continue;
 			}
-			PvtChat pvt(db_, currentUser_, recipient);
+			Dialog pvt(db_, currentUser_, recipient);
 			pvt.showMenu();
 		}
 		else if(action == '3')
-			std::cout << "There should be conversation here\n";
+		{
+			Dataset ds{ "PUB"s };
+			ds = db_->reply(ds);
+			read(ds[0]);
+		}
 		else if(action == 'q')
 			break;
 		else
 			std::cout << "Your command is unclear. Please, select an action from the list.\n";
-	} while (true);
+	} while(true);
 }
 
-void PubChat::reg()
+void Chat::showUsers()
+{
+	Dataset ds{ "USERS"s };
+	ds = db_->reply(ds);
+	for (const auto& entry : fs::directory_iterator(ds[0]))
+        std::cout << entry << std::endl;
+}
+
+void Chat::reg()
 {
 	std::string login;
 	std::string password;
@@ -98,13 +113,13 @@ void PubChat::reg()
 	std::cout << "Enter your password: ";
 	std::cin >> password;
 	Dataset ds{ "REG"s, login, password };
-	if (db_->handle(ds))
-		std::cout << "Registration was successful!\n";
-	else
+	if (login == "all"s || !db_->handle(ds))
 		std::cout << "This login is already taken!\n";
+	else
+		std::cout << "Registration was successful!\n";
 }
 
-void PubChat::sign()
+void Chat::sign()
 {
 	std::string login;
 	std::string password;
@@ -122,17 +137,29 @@ void PubChat::sign()
 		std::cout << "Invalid login or password!\n";
 }
 
-void PubChat::post()
+void Chat::post()
 {
 	std::string text;
 	std::cout << "Message: ";
 	std::cin >> text;
-	Dataset ds{ currentUser_, recipient_, text, getTime() };
-	if (!db_->handle(ds))
+	if(text == ""s)
 		std::cout << "You can't send an empty message!\n";
+	else
+	{
+		Dataset ds{ currentUser_, recipient_, text, getTime() };
+		if (!db_->handle(ds))
+			std::cout << "Failed attempt to send!\n";
+	}
 }
 
-std::string PubChat::getTime()
+void Chat::read(const fs::path& path)
+{
+	std::ifstream in(path);
+	for (std::string line; std::getline(in, line);) 
+    	std::cout << line << std::endl;
+}
+
+std::string Chat::getTime()
 {
 	time_t now = time(nullptr);
 	char buffer[20];
@@ -140,13 +167,13 @@ std::string PubChat::getTime()
 	return buffer;
 }
 
-PvtChat::PvtChat(DataBase* db, const std::string& currentUser, const std::string& recipient) : PubChat(db)
+Dialog::Dialog(DataBase* db, const std::string& currentUser, const std::string& recipient) : Chat(db)
 {
 	currentUser_ = currentUser;
 	recipient_ = recipient;
 }
 
-void PvtChat::showMenu()
+void Dialog::showMenu()
 {
 	char action = '0';
 	do
@@ -158,13 +185,16 @@ void PvtChat::showMenu()
 			post();
 		else if(action == '2')
 		{
-			Dataset ds{ "READ"s, currentUser_, recipient_ };
-			if(!db_->handle(ds))
+			Dataset ds{ "PVT"s, currentUser_, recipient_ };
+			ds = db_->reply(ds);
+			if(!ds.size())
 				std::cout << "There are no messages in this dialog yet!\n";
+			else
+				read(ds[0]);
 		}
 		else if(action == 'q')
 			break;
 		else
 			std::cout << "Your command is unclear. Please, select an action from the list.\n";
-	} while (true);
+	} while(true);
 }

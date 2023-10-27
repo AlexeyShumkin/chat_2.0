@@ -14,6 +14,7 @@ class DataBase
 public:
 	virtual ~DataBase() = default;
 	virtual bool handle(const Dataset& ds) = 0;
+	virtual const Dataset& reply(Dataset& ds) = 0;
 };
 
 class LocalDB : public DataBase
@@ -21,6 +22,7 @@ class LocalDB : public DataBase
 public:
 	LocalDB();
 	bool handle(const Dataset& ds) override;
+	const Dataset& reply(Dataset& ds) override;
 private:
 	fs::path userDataPath_{ "userData"s };
 	fs::path msgDataPath_{ "msgData"s };
