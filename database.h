@@ -28,4 +28,5 @@ private:
 	fs::path msgDataPath_{ "msgData"s };
 	std::fstream fst_;
 	size_t makeDialogID(const std::string& sender, const std::string& recipient);
+	size_t hashFunction(const std::string& password);
 };

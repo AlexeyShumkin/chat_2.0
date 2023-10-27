@@ -100,8 +100,8 @@ void Chat::showUsers()
 {
 	Dataset ds{ "USERS"s };
 	ds = db_->reply(ds);
-	for (const auto& entry : fs::directory_iterator(ds[0]))
-        std::cout << entry << std::endl;
+    for (const auto& entry : fs::directory_iterator(ds[0]))
+        std::cout << entry.path() << std::endl;
 }
 
 void Chat::reg()

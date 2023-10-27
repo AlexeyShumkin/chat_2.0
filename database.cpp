@@ -10,24 +10,26 @@ bool LocalDB::handle(const Dataset& ds)
 {
     if(ds[0] == "REG"s && !fs::exists(userDataPath_ / ds[1]))
     {
+        size_t hash = hashFunction(ds[2]);
         fst_.open(userDataPath_ / ds[1], std::fstream::out);
         if(fst_.is_open())
         {
-            fst_ << ds[2];
+            fst_ << hash;
             fst_.close();
             return true;
         }
     }
     else if(ds[0] == "SIGN"s && fs::exists(userDataPath_ / ds[1]))
     {
-        std::string tmp;
+        size_t hash = hashFunction(ds[2]);
+        size_t tmp = 0;
         fst_.open(userDataPath_ / ds[1], std::fstream::in);
         if(fst_.is_open())
         {
             fst_ >> tmp;
             fst_.close();
         }
-        if(ds[2] == tmp)
+        if(hash == tmp)
             return true;
     }
     else if(ds[0] == "FIND"s && fs::exists(userDataPath_ / ds[1]))
@@ -86,4 +88,14 @@ size_t LocalDB::makeDialogID(const std::string& sender, const std::string& recip
         ++i;
     }
     return res <<= sum;
+}
+
+size_t LocalDB::hashFunction(const std::string& password)
+{
+    size_t i = 0;
+    size_t j = password.size() - 1;
+    size_t res = 0;
+    while(i < j)
+        res += password[i++] << password[j--];
+    return res;
 }
