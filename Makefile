@@ -1,20 +1,17 @@
 TARGET = release
 CC = g++
+SRC = $(wildcard *.cpp)
+OBJ = $(patsubst %.cpp, %.o, $(SRC))
 
-$(TARGET) : main.o chat.o database.o
-	$(CC) main.o chat.o database.o -o $(TARGET)
+$(TARGET) : $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET)
 
-main.o : main.cpp
-	$(CC) -c main.cpp -o main.o
-
-chat.o : chat.cpp
-	$(CC) -c chat.cpp -o chat.o
-
-database.o : database.cpp
-	$(CC) -c database.cpp -o database.o
+%.o : %.cpp
+	$(CC) -c $< -o $@
 
 clean :
 	rm *.o
 
-uninstall:
-	rm $(TARGET)
+erase : 
+	rm -rf data $(TARGET)
+	
